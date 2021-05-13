@@ -19,6 +19,7 @@ use KgBot\Billy\Builders\EmployeeBuilder;
 use KgBot\Billy\Builders\InventoryAdjustmentBuilder;
 use KgBot\Billy\Builders\InventoryMovementBuilder;
 use KgBot\Billy\Builders\InvoiceBuilder;
+use KgBot\Billy\Builders\BankPaymentBuilder;
 use KgBot\Billy\Builders\JournalBuilder;
 use KgBot\Billy\Builders\LocationBuilder;
 use KgBot\Billy\Builders\LotBuilder;
@@ -115,6 +116,14 @@ class Billy
     public function invoices()
     {
         return new InvoiceBuilder( $this->request );
+    }
+
+     /**
+     * @return BankPaymentBuilder
+     */
+    public function BankPayments()
+    {
+        return new BankPaymentBuilder( $this->request );
     }
 
     /**
